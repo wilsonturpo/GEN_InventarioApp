@@ -1,0 +1,39 @@
+<div class="container mt-3 ms-3">
+
+  <h2>Editar dato maestro</h2>
+  <form [formGroup]="form"  (submit)="enviarData()">
+    <br>
+
+    <div class="form-outline mb-4">
+
+        <p>
+          Categoria
+        </p>
+
+        <input
+        type="text"
+        class="form-control"
+        value="{{this.data['maeS_cDescripcion']}}"
+        disabled
+        />
+
+        <br>
+
+        <label class="form-label" for="form1Example2">Descripción</label>
+        <input
+        type="text"
+        id="form1Example2"
+        class="form-control"
+        formControlName="maeS_cDescripcionCampo"
+        value="{{this.data['maeS_cDescripcionCampo']}}"
+        />
+
+
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-dark btn-block">Actualizar</button> &nbsp;
+    <button type="btn" class="btn btn-danger btn-block" routerLink="/mantenimiento/maestro">Cancelar</button>
+  </form>
+</div>
+

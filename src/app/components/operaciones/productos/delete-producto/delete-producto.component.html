@@ -1,0 +1,54 @@
+<div class="container mt-3 ms-3">
+
+  <h2 style="color: red;">¿Realmente desea eliminar el registro?</h2>
+
+  <form [formGroup]="form"  (submit)="enviarData()">
+    <br>
+
+    <div class="form-outline mb-4">
+      <p>Sección - Área</p>
+      <p
+      style="background-color: rgb(215, 216, 218);"
+      class="form-control"
+      disabled
+      >{{this.productoData['seccion']}}</p>
+
+      <br>
+      <p>Presentación</p>
+      <p
+      style="background-color: rgb(215, 216, 218);"
+      class="form-control"
+      disabled
+      >{{this.productoData['medida']}}</p>
+
+      <br>
+      <label class="form-label" for="form1Example2">Descripción</label>
+      <p
+      type="text"
+      id="form1Example2"
+      class="form-control"
+      >{{this.productoData['proD_cDescripcion']}}</p>
+
+      <br>
+      <label class="form-label" for="formPrecio">Precio</label>
+      <p
+      type="text"
+      id="formPrecio"
+      class="form-control"
+      >{{this.productoData['proD_mPrecio']}}</p>
+
+      <br>
+      <label class="form-label" for="formStock">Stock</label>
+      <p
+      type="text"
+      id="formStock"
+      class="form-control"
+      >{{this.productoData['proD_nStock']}}</p>
+
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-danger btn-block">Eliminar</button> &nbsp;
+    <button type="btn" class="btn btn-dark btn-block" routerLink="/operaciones/producto">Cancelar</button>
+  </form>
+</div>

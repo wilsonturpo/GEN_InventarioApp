@@ -1,0 +1,44 @@
+<div class="container mt-3 ms-3">
+
+  <h2>Crear dato maestro</h2>
+
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    [(ngModel)]="codeSelected"
+    (ngModelChange)="onCategoryChanged($event)">
+
+    <option selected>Selecione la categoria</option>
+    <option
+      *ngFor="let categoria of categoriasDatoMaestro"
+      value={{categoria.maeS_cCodigoTabla+categoria.maeS_cDescripcion}}
+      >
+      {{categoria.maeS_cDescripcion}}
+    </option>
+  </select>
+
+  <form [formGroup]="form" (submit)="enviarData()">
+    <br>
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        id="form1Example2"
+        class="form-control"
+        formControlName="maeS_cDescripcionCampo"
+        />
+        <input
+        type="hidden"
+        class="form-control"
+        formControlName="maeS_cCodigoTabla"
+        value="{{codeSelected}}"
+        />
+
+        <label class="form-label" for="form1Example2">Descripción</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-dark btn-block">Crear</button> &nbsp;
+    <button type="btn" class="btn btn-danger btn-block" routerLink="/mantenimiento/maestro">Cancelar</button>
+  </form>
+</div>
+

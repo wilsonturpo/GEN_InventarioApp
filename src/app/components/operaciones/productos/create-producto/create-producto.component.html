@@ -1,0 +1,83 @@
+<div class="container mt-3 ms-3">
+  <h2>Crear producto - material</h2>
+
+  <label class="mt-2">Sección</label>
+  <select
+    class="form-select"
+    [(ngModel)]="seccionOpcion"
+    (ngModelChange)="onSeccionOpcionChange($event)"
+  >
+  <option
+    *ngFor="let seccion of secciones"
+    value={{seccion.maeS_cCodigoCampo}}>
+
+    {{seccion.maeS_cDescripcionCampo}}
+  </option>
+
+  </select>
+
+  <label class="mt-2">Unidad de medida</label>
+  <select
+    class="form-select"
+    [(ngModel)]="unidadMedida"
+    (ngModelChange)="onUnidadChange($event)"
+  >
+  <option
+    [value]="'002'">
+    Estándar
+  </option>
+
+  <option
+    [value]="'003'">
+    Personalizada
+  </option>
+
+  </select>
+
+  <label class="mt-2">Medida</label>
+  <select
+    class="form-select"
+    [(ngModel)]="medida"
+    (ngModelChange)="onMedidaChange($event)"
+  >
+  <option
+    *ngFor="let medida of medidas"
+    value={{medida.maeS_cCodigoCampo}}>
+
+    {{medida.maeS_cDescripcionCampo}}
+  </option>
+
+  </select>
+
+  <form [formGroup]="form" (submit)="enviarData()">
+    <br>
+    <div class="form-outline mb-4">
+      <label class="mt-2">Descripción</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="proD_cDescripcion"
+        />
+
+      <label class="mt-2">Precio</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="proD_mPrecio"
+        />
+
+      <label class="mt-2">Stock</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="proD_nStock"
+        />
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-dark btn-block">Crear</button> &nbsp;
+    <button type="btn" class="btn btn-danger btn-block" routerLink="/operaciones/productos">Cancelar</button>
+  </form>
+
+
+</div>

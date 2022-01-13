@@ -1,0 +1,40 @@
+<div class="container mt-3">
+  <div class="card">
+      <div class="card-body">
+          <span class="h3">Productos - Materiales</span>
+
+          <div class="table-responsive">
+
+            <button class="btn btn-dark float-end mb-2" routerLink="/operaciones/productos/create">Agregar</button>
+
+            <table class="table table-striped table-hover table-bordered mt-5">
+              <thead>
+                <tr>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Unidad</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Stock</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let item of asignacionesConDatosExtras">
+                  <td data-label="Categoria">{{item.seccion}}</td>
+                  <td data-label="Unidad">{{item.medida}}</td>
+                  <td data-label="Descripción">{{item.proD_cDescripcion}}</td>
+                  <td data-label="Precio">{{item.proD_mPrecio}}</td>
+                  <td data-label="Stock">{{item.proD_nStock}}</td>
+                  <td data-label="Acciones">
+                      <i class="fas fa-edit fa-lg text-primary me-2" ></i>
+                      <i class="fas fa-trash fa-lg text-danger me-2"></i>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+  </div>
+</div>

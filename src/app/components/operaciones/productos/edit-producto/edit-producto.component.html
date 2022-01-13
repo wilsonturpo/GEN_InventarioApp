@@ -1,0 +1,60 @@
+<div class="container mt-3 ms-3">
+
+  <h2>Editar Producto</h2>
+  <form [formGroup]="form"  (submit)="enviarData()">
+    <br>
+
+    <div class="form-outline mb-4">
+      <p>Sección - Área</p>
+      <p
+      style="background-color: rgb(215, 216, 218);"
+      class="form-control"
+      disabled
+      >{{this.productoData['seccion']}}</p>
+
+      <br>
+      <p>Presentación</p>
+      <p
+      style="background-color: rgb(215, 216, 218);"
+      class="form-control"
+      disabled
+      >{{this.productoData['medida']}}</p>
+
+      <br>
+      <label class="form-label" for="form1Example2">Descripción</label>
+      <input
+      type="text"
+      id="form1Example2"
+      class="form-control"
+      formControlName="proD_cDescripcion"
+      value="{{this.productoData['proD_cDescripcion']}}"
+      />
+
+      <br>
+      <label class="form-label" for="formPrecio">Precio</label>
+      <input
+      type="text"
+      id="formPrecio"
+      class="form-control"
+      formControlName="proD_mPrecio"
+      value="{{this.productoData['proD_mPrecio']}}"
+      />
+
+      <br>
+      <label class="form-label" for="formStock">Stock</label>
+      <input
+      type="text"
+      id="formStock"
+      class="form-control"
+      formControlName="proD_nStock"
+      value="{{this.productoData['proD_nStock']}}"
+      />
+
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-dark btn-block">Actualizar</button> &nbsp;
+    <button type="btn" class="btn btn-danger btn-block" routerLink="/mantenimiento/maestro">Cancelar</button>
+  </form>
+</div>
+
